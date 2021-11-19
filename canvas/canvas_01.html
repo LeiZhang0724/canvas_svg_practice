@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 01</title>
+</head>
+<body>
+  <!-- centralise canvas needs to change display as block or add div outside-->
+  <canvas id="canvas" width="500px" height="500px">Your browser version is low, please update your browser!</canvas>
+
+  <script>
+    let canvas = document.querySelector('#canvas')
+    let ctx = canvas.getContext('2d')
+
+    // drawLine(100, 100, 400, 100, 'red', 2)
+
+    for(let i = 0; i< 30; i++) {
+      drawLine(100 + 10*i, 100, 105+ 10*i, 100, 'red', 2)
+    }
+    
+    function drawLine(x1, y1, x2, y2, color, width) {
+      ctx.beginPath()
+      ctx.moveTo(x1, y1)
+      ctx.lineTo(x2, y2)
+      ctx.strokeStyle = color
+      ctx.lineWidth = width
+      ctx.stroke()
+      ctx.closePath()
+    }
+
+  </script>
+</body>
+</html>
